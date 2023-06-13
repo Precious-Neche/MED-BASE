@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block contents %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto my-4">
+                <div class="card">
+                    <div class="card-header fw-bold text-center">
+                        <h3>Delete Record</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">Are you sure you want to delete {{patient.fname}} {{patient.lname}} record?</p>
+
+                            <div class="button-group d-flex gap-3">
+                                <a href="{%url 'detail'%}"><button class="btn btn-info">NO</button></a>
+                                <form action="" method="post">
+                                    {% csrf_token %}
+                                    <button class="btn btn-danger" type="submit">YES</button>
+                                </form>
+                                
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock contents %}
